@@ -1,2 +1,2 @@
 # Titan_Wallet
-Tittan Wallet React Native
+Titan Wallet React Native

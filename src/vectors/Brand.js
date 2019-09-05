@@ -7,6 +7,6 @@ const Brand = props => (
         <Circle cx={59.828} cy={59.829} r={53.314} fill="#D73FDA" />
         <Circle cx={90} cy={30} r={30} fill="#fff" />
     </Svg>
-)
+);
 
 export default Brand

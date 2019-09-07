@@ -17,31 +17,16 @@ function createOneKeyType(name) {
 
 const TYPES = {
     BASE: createType('BASE'),
-    WINDOW: createOneKeyType('WINDOW_OPEN'),
-
-    BUSINESS_LIST: createType('BUSINESS_LIST'),
-    BUSINESS_SINGLE: createType("BUSINESS_SINGLE"),
-    BUSINESS: createOneKeyType("BUSINESS_SINGLE_CLEAN"),
-
-    RECORD_ADD_SERVICE: createOneKeyType("RECORD_ADD_SERVICE"),
-    RECORD_REMOVE_SERVICE: createOneKeyType("RECORD_REMOVE_SERVICE"),
-    SELECT_WORKER: createOneKeyType("SELECT_WORKER"),
-
-    FREE_TIME_RECORD: createType("FREE_TIME_RECORD"),
-
     SEND_CODE: createType("SEND_CODE"),
 
-    VERIFY_CODE_IN_RECORD: createType("VERIFY_CODE_IN_RECORD"),
+    GET_WALLET_INFO: createType("GET_WALLET_INFO"),
+    CREATE_NEW_WALLET: createType("CREATE_NEW_WALLET"),
 
-    CLEAN_PHONE_STATE: createOneKeyType("CLEAN_PHONE_STATE"),
+    VERIFY_CODE: createType("VERIFY_CODE"),
 
-    CLEAN_RECORD_RESULT: createOneKeyType("CLEAN_RECORD_RESULT"),
+    NO_REQUEST_CODE: createOneKeyType("NO_REQUEST_CODE"),
 
-    CLEAN_RECORD_SUCCESS: createOneKeyType("CLEAN_RECORD_SUCCESS"),
-
-    MODAL_ACTIVE: createOneKeyType("MODAL_ACTIVE"),
-
-    CLOSE_MODAL_CLEAN_ERROR: createOneKeyType("CLOSE_MODAL_CLEAN_ERROR"),
+    LOG_OUT: createOneKeyType("LOG_OUT"),
 };
 
 export default TYPES

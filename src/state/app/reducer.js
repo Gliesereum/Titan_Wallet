@@ -2,51 +2,91 @@ import {createReducer, noMutationState} from '../../utils';
 import TYPES from "../../types";
 
 const initialState = {
+    auth: null,
     status: null,
     loading: true,
-    corporation: null,
-    businessList: [],
-    businessListLoading: false,
+    phoneRequest: null,
+    authLoading: false,
     welcome: "Coupler - кнопка услуг!",
-    errorBusinessList: null,
+    errorSendCode: null,
     error: null
 };
 
 export default createReducer(initialState, {
+
     //-------------------------------------------------//
 
-    [TYPES.BUSINESS_LIST.START]:
+    [TYPES.VERIFY_CODE.START]:
         (state) => noMutationState(state, {
-            businessListLoading: true
+            authLoading: true
         }),
 
-    [TYPES.BUSINESS_LIST.SUCCESS]:
+    [TYPES.VERIFY_CODE.SUCCESS]:
         (state, payload) => noMutationState(state, {
-            businessList: payload
+            auth: payload
         }),
 
-    [TYPES.BUSINESS_LIST.ERROR]:
+    [TYPES.VERIFY_CODE.ERROR]:
         (state, payload) => noMutationState(state, {
-            errorBusinessList: payload.code
+            auth: null,
+            error: payload.code
         }),
 
-    [TYPES.BUSINESS_LIST.FINISH]:
+    [TYPES.VERIFY_CODE.FINISH]:
         (state) => noMutationState(state, {
-            businessListLoading: false
+            authLoading: false
         }),
 
+    //-------------------------------------------------//
+
+    [TYPES.NO_REQUEST_CODE.NO_REQUEST_CODE]:
+        (state) => noMutationState(state, {
+            phoneRequest: null
+        }),
+
+    //-------------------------------------------------//
+
+    [TYPES.LOG_OUT.LOG_OUT]:
+        (state) => noMutationState(state, {
+            auth: null,
+            phoneRequest: null,
+            authLoading: false
+        }),
+
+    //-------------------------------------------------//
+
+    [TYPES.SEND_CODE.START]:
+        (state) => noMutationState(state, {
+            authLoading: true
+        }),
+
+    [TYPES.SEND_CODE.SUCCESS]:
+        (state, payload) => noMutationState(state, {
+            phoneRequest: payload,
+            errorSendCode: null,
+        }),
+
+    [TYPES.SEND_CODE.ERROR]:
+        (state, payload) => noMutationState(state, {
+            errorSendCode: payload.code
+        }),
+
+    [TYPES.SEND_CODE.FINISH]:
+        (state) => noMutationState(state, {
+            authLoading: false
+        }),
 
     //-------------------------------------------------//
 
     [TYPES.BASE.START]:
         (state) => noMutationState(state, {
+            authLoading: false,
             loading: true
         }),
 
     [TYPES.BASE.SUCCESS]:
-        (state, {status, corpInfo}) => noMutationState(state, {
-            status: status,
-            corpInfo: corpInfo,
+        (state, payload) => noMutationState(state, {
+            status: payload,
             error: null,
         }),
 

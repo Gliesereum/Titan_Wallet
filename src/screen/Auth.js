@@ -44,7 +44,7 @@ class Auth extends Component {
     }
 
     _validPhone = e => {
-        const phoneRe = new RegExp("^\\++?\\d{11}$");
+        const phoneRe = new RegExp("^\\++?\\d{12}$");
         this.setState({
             phoneValid: phoneRe.test(e)
         });
@@ -83,7 +83,7 @@ class Auth extends Component {
                                     style={{width: 100, height: 100}}
                                 />
                                 <AuthTextStyle>
-                                    TITAN
+                                    {this.props}
                                 </AuthTextStyle>
                                 <Text style={{
                                     marginTop: 20,
@@ -92,7 +92,7 @@ class Auth extends Component {
                                     color: "#f2f2f2",
                                     textAlign: "center"
                                 }}>
-                                    Bitcoin кошелек в твоем смарфоне.
+                                    {this.props}
                                 </Text>
                                 {this.props.app.phoneRequest ? (
                                     <View style={{height: 170}}>
@@ -119,7 +119,7 @@ class Auth extends Component {
                                             onPress={e => this.state.codeValid ? this.props.verifyPhone({
                                                 phone:this.state.phone,
                                                 code: this.state.code
-                                            }): this._setModalVisible(!this.state.modalVisible, "Нет кода нет проверки!")}
+                                            }): this._setModalVisible(!this.state.modalVisible, this.props)}
                                         >
                                             <View style={{
                                                 width: Dimensions.get('window').width,
@@ -133,13 +133,13 @@ class Auth extends Component {
                                                     color: this.state.codeValid ? "#ffffff" : "#69758e",
                                                     fontSize: 20
                                                 }}>
-                                                    Подтвердить код
+                                                    {this.props}
                                                 </Text>
                                             </View>
                                         </TouchableOpacity>
                                         <TouchableOpacity style={{margin: 20}}>
                                             <Text style={{color: "#69758e", textAlign: "right", marginBottom: 20}} onPress={e => this._resetState()}>
-                                                Не пришел код?
+                                                {this.props}
                                             </Text>
                                         </TouchableOpacity>
                                     </View>
@@ -170,7 +170,7 @@ class Auth extends Component {
                                         <TouchableOpacity
                                             onPress={e => this.state.phoneValid
                                                 ? this.props.checkPhoneSendCode(this.state.phone)
-                                                : this._setModalVisible(!this.state.modalVisible, "Номер телефона это важно!")
+                                                : this._setModalVisible(!this.state.modalVisible, this.props)
                                             }
                                         >
                                             <View style={{
@@ -186,7 +186,7 @@ class Auth extends Component {
                                                     color: this.state.phoneValid ? "#ffffff" : "#69758e",
                                                     fontSize: 20
                                                 }}>
-                                                    Получить код
+                                                    {this.props}
                                                 </Text>
                                             </View>
                                         </TouchableOpacity>
@@ -198,7 +198,7 @@ class Auth extends Component {
                                     color: "#7e95bf",
                                     textAlign: "center"
                                 }}>
-                                    Ваш кошелек будет привязан к мобильному номеру
+                                    {this.props}
                                 </Text>
                             </AuthContainerHeaderStyle>
                         </KeyboardAwareScrollView>
@@ -222,7 +222,7 @@ class Auth extends Component {
                         alignContent: "center"
                     }}>
                         <Text style={{fontSize: 32, color: "#fff", textAlign: "center"}}>
-                            Внимание
+                            {this.props}
                         </Text>
 
                         <LottieView
@@ -258,7 +258,7 @@ class Auth extends Component {
                                 color: "#fff",
                                 fontSize: 24,
                             }}>
-                                Понятно
+                                {this.props}
                             </Text>
                         </TouchableHighlight>
                     </View>

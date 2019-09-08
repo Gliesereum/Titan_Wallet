@@ -1,7 +1,7 @@
 export const CONFIG = {
-    APPLICATION_ID: "4ba91ec3-5a50-400f-9d29-08e4f6f022e9",
-    SERVER: "https://dev.gliesereum.com/api",
-    SERVER_BTC: "http://192.168.0.102:3390/api/v1",
+    APPLICATION_ID: "account SMS API",
+    SERVER: "server API",
+    SERVER_BTC: "bitcoin node API",
 };
 
 const URLS = {
@@ -11,21 +11,23 @@ const URLS = {
 
     GET_WALLET: `${CONFIG.SERVER_BTC}/wallet?phone=`,
     CREATE_WALLET: `${CONFIG.SERVER_BTC}/wallet`,
+
+    SEND_BTC: `${CONFIG.SERVER_BTC}/btc`,
+    TRANSACTION_BTC: `${CONFIG.SERVER_BTC}/btc`,
+    TRANSACTION_EX: `${CONFIG.SERVER_BTC}/btc/ex`,
 };
 
 const SDK = {
 
     getApiStatus: async () => await getHttpPromise(URLS.GET_STATUS_API),
 
-    //----------------------------------------------------------------------------------------//
+    //----------------------------DEMO------------------------------------------------------------//
     getBtcWalletInfo: async phone => await getHttpPromise(URLS.GET_WALLET + phone),
 
     createBtcWallet: async body => await postHttpPromise(URLS.CREATE_WALLET, body),
     //----------------------------------------------------------------------------------------//
 
     checkPhone: async phone => await getHttpPromise(URLS.CHECK_PHONE + phone),
-
-    //+ `${process.env.NODE_ENV === 'development' ? '&dev=true' : '&dev=true'}`
 
     signIn: async body => await postHttpPromise(URLS.SIGN_IN, body),
 

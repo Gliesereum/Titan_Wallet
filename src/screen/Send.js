@@ -19,7 +19,6 @@ class Send extends Component {
     };
     static navigationOptions = ({ navigation }) => {
         return {
-            title: "Перевод монет",
             headerStyle: {
                 backgroundColor: '#272C3A',
                 borderBottomWidth: 0,
@@ -65,7 +64,7 @@ class Send extends Component {
                             loop={true}
                         />
                         <Text style={{marginBottom: 20, marginTop: 20, fontSize: 28, color: "#23D29C"}}>
-                            Перевести BTC
+                            {this.props}
                         </Text>
                         <View>
                             <TextInput
@@ -124,7 +123,7 @@ class Send extends Component {
                                     color: "#fff",
                                     fontSize: 24,
                                 }}>
-                                    Перевести
+                                    {this.props}
                                 </Text>
                             </TouchableHighlight>
                         </View>
@@ -159,7 +158,7 @@ class Send extends Component {
                                     marginTop: 40,
                                     marginBottom: 40
                                 }}>
-                                    Очень хорошо
+                                    {this.props}
                                 </Text>
 
                                 <TouchableHighlight
@@ -180,7 +179,7 @@ class Send extends Component {
                                         color: "#fff",
                                         fontSize: 24,
                                     }}>
-                                        Закрыть
+                                        {this.props}
                                     </Text>
                                 </TouchableHighlight>
                             </View>

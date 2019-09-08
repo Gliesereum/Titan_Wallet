@@ -18,7 +18,6 @@ class Details extends Component {
     };
     static navigationOptions = ({ navigation }) => {
         return {
-            title: "Купить монеты",
             //title: navigation.getParam(''),
             headerStyle: {
                 backgroundColor: '#272C3A',
@@ -65,7 +64,7 @@ class Details extends Component {
                             loop={false}
                         />
                         <Text style={{marginBottom: 20, fontSize: 20, color: "#23D29C"}}>
-                            Мобильный Банк
+                            {this.props}
                         </Text>
                         <View>
                             <TextInput
@@ -106,7 +105,7 @@ class Details extends Component {
                                     color: "#fff",
                                     fontSize: 24,
                                 }}>
-                                    Оплатить
+                                    {this.props}
                                 </Text>
                             </TouchableHighlight>
                         </View>
@@ -153,7 +152,7 @@ class Details extends Component {
                                         color: "#fff",
                                         fontSize: 24,
                                     }}>
-                                        Закрыть
+                                        {this.props}
                                     </Text>
                                 </TouchableHighlight>
 

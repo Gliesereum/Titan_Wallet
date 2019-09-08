@@ -7,7 +7,7 @@ const initialState = {
     loading: true,
     phoneRequest: null,
     authLoading: false,
-    welcome: "Coupler - кнопка услуг!",
+    welcome: "",
     errorSendCode: null,
     error: null
 };

@@ -120,7 +120,7 @@ class Start extends Component {
                                     {this.props.wallet.info.address}
                                 </Text>
                                 <Text style={{fontSize: 32, color: "#fff", textAlign: "center", padding: 10}}>
-                                    Баланс: {this.props.wallet.info.amount} BTC
+                                    {this.props}: {this.props.wallet.info.amount} {this.props}
                                 </Text>
                             </View>
                             <View style={{
@@ -142,7 +142,7 @@ class Start extends Component {
                                         size={30} color={"#23D29C"}
                                     />
                                     <Text style={{fontSize: 10, color: "#fff"}}>
-                                        Профиль
+                                        {this.props}
                                     </Text>
                                 </View>
                                <View style={styles.navigation}>
@@ -154,7 +154,7 @@ class Start extends Component {
                                         size={30} color={"#23D29C"}
                                     />
                                     <Text style={{fontSize: 12, color: "#fff", textAlign: "center"}}>
-                                        Отправить
+                                        {this.props}
                                     </Text>
                                 </View>
                                 <View style={styles.navigation}>
@@ -166,7 +166,7 @@ class Start extends Component {
                                         size={30} color={"#23D29C"}
                                     />
                                     <Text style={{fontSize: 12, color: "#fff", textAlign: "center"}}>
-                                        История
+                                        {this.props}
                                     </Text>
                                 </View>
                                 <View style={styles.navigation}>
@@ -178,7 +178,7 @@ class Start extends Component {
                                         size={30} color={"#23D29C"}
                                     />
                                     <Text style={{fontSize: 12, color: "#fff", textAlign: "center"}}>
-                                        Пополнить
+                                        {this.props}
                                     </Text>
                                 </View>
                             </View>
@@ -203,14 +203,14 @@ class Start extends Component {
                                     loop
                                 />
                                 <Text style={{fontSize: 18, color: "#fff", textAlign: "center", padding: 10}}>
-                                    Привет {user.firstName} {user.lastName}
+                                    {this.props} {user.firstName} {user.lastName}
                                 </Text>
                                 <Text style={{fontSize: 18, color: "#fff", textAlign: "center", padding: 10}}>
-                                    Создай свой первый кошелек BTC?
+                                    {this.props}
                                 </Text>
                                 <TouchableOpacity onPress={e => this.props.createNewBtcWallet({
                                     phone: this.props.app.phoneRequest,
-                                    node: "fac23748d05974798d388783b45151b4fccb2951"
+                                    node: this.props
                                 })}>
                                     <View style={{marginTop: 20, justifyContent: "center", alignItems: "center"}}>
                                         <Ionicons

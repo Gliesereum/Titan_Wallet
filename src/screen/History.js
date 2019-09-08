@@ -11,7 +11,6 @@ import LottieView from "lottie-react-native";
 class History extends Component {
     static navigationOptions = ({ navigation }) => {
         return {
-            title: "История",
             headerStyle: {
                 backgroundColor: '#272C3A',
                 borderBottomWidth: 0,
@@ -24,12 +23,7 @@ class History extends Component {
     };
 
     state = {
-        transactions:[
-            {"id":"1", "name":"Перевод Максу", "amount":"0.7832322", "balance":"0.008333"},
-            {"id":"2", "name":"Перевод Андрею", "amount":"23.7832322", "balance":"12.208873"},
-            {"id":"3", "name":"Перевод Олегу", "amount":"1.7546322", "balance":"4.908873"},
-            {"id":"4", "name":"Перевод Ирине", "amount":"0.000322", "balance":"8.898873"},
-        ]
+        transactions:[]
     };
 
     render() {
@@ -61,7 +55,7 @@ class History extends Component {
                             fontSize: 18,
                             marginBottom: 20
                         }}>
-                            История всех транзакций
+                            {this.props}
                         </Text>
                     </View>
                     <ScrollView>
@@ -83,7 +77,7 @@ class History extends Component {
                                         color: "#fff",
                                         fontSize: 12,
                                     }}>
-                                        {tx.balance} | {tx.name} {tx.amount} BTC
+                                        {tx.balance} | {tx.name} {tx.amount} {this.props}
                                     </Text>
                                 </TouchableHighlight>
                             )

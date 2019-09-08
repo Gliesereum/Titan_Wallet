@@ -21,30 +21,17 @@ class App extends Component {
     render() {
         return (
             <Provider store={store}>
-                <ThemeProvider theme={{
-                    background: "#252a3a",
-                    text: "#d6d6d6"
-                }}>
-                    <Container config={CONFIG}/>
-                </ThemeProvider>
+                <PersistGate loading={false} persistor={persistor}>
+                    <ThemeProvider theme={{
+                        background: "#252a3a",
+                        text: "#d6d6d6"
+                    }}>
+                        <Container config={CONFIG}/>
+                    </ThemeProvider>
+                </PersistGate>
             </Provider>
         );
     }
-
-    // render() {
-    //     return (
-    //         <Provider store={store}>
-    //             <PersistGate loading={false} persistor={persistor}>
-    //                 <ThemeProvider theme={{
-    //                     background: "#252a3a",
-    //                     text: "#d6d6d6"
-    //                 }}>
-    //                     <Container config={CONFIG}/>
-    //                 </ThemeProvider>
-    //             </PersistGate>
-    //         </Provider>
-    //     );
-    // }
 }
 
 export default App;

@@ -13,7 +13,6 @@ import {Ionicons} from "@expo/vector-icons";
 class Profile extends Component {
     static navigationOptions = ({navigation}) => {
         return {
-            title: "Профиль",
             //title: navigation.getParam('fullName'),
             headerStyle: {
                 backgroundColor: '#272C3A',
@@ -41,7 +40,7 @@ class Profile extends Component {
                     backgroundColor: "#272C3A"
                 }}>
                     <Text style={{fontSize: 20, color: "#23D29C", marginBottom:20}}>
-                        Профиль
+                        {this.props}
                     </Text>
                     <View>
                         <Image
@@ -72,7 +71,7 @@ class Profile extends Component {
                                 size={45} color={"#23D29C"}
                             />
                             <Text style={{fontSize: 12, color: "#fff", textAlign: "center"}}>
-                                Выйти
+                                {this.props}
                             </Text>
                         </View>
                     </View>
